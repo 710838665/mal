@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>map</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+	    <script src='./data1.js'></script>
+	    <script src='./data2.js'></script>
+	    <script src='./data3.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
+	</head>
+	<body class="landing">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1>URBAN</h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">MAP</a></li>
+											<li><a href="generic.html">ANALYSIS&DOWLOWDS</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>Urban Data Analysis</h2>
+							<p>JIKANG<br />
+							CODE1230<br />
+							THE NUMBER OF PEOPLE WHO DRIVE TO WORK</a>.</p>
+							<ul class="actions">
+								<li><a href="#" class="button special">Refresh</a></li>
+							</ul>
+						</div>
+						<a href="#one" class="more scrolly">Read More</a>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>DRIVEV TO WORK <br />
+								ANALYSIS</h2>
+								<p>MALE AND FEMALE<br />
+								TOTAL</p>
+							</header>
+							<ul class="icons major">
+								<li><span class="icon fa-diamond major style1"><span class="label">Lorem</span></span></li>
+								<li><span class="icon fa-heart-o major style2"><span class="label">Ipsum</span></span></li>
+								<li><span class="icon fa-code major style3"><span class="label">Dolor</span></span></li>
+							</ul>
+						</div>
+					</section>
+                    <div class="chs">kj <a href="1" >0</a></div>
+
+				<!-- Two -->
+					
+						<section class="spotlight">
+							
+<div id='map1' style='width: 70%; height: 400px'></div><div class="content">
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiNzEwODM4NjY1IiwiYSI6ImNqbGdmcmlvMDE3MTIzdnM1ang4eXpzcjIifQ.0niAC0PAnjpiw4M8cZyzhA';
+var map1 = new mapboxgl.Map({
+    container: 'map1', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+    pitch: 45,
+    bearing: -17.6,
+    zoom: 6 // starting zoom
+});
+map1.on('load',function(){
+    
+    map1.addLayer({
+        "id":"data1",
+        "type": "fill-extrusion",
+        "source":{
+             'type':'geojson',
+             'data':data1
+        },
+           'paint':{
+               'fill-extrusion-color':{
+                   'property':'2016m',
+                   "stops":[
+                       [0,'darkgray'],
+                       [50,'lightcoral'],
+                       [100,'crimson'],
+                       [200,'firebrick'],
+                       [300,'darkred'],
+                       ]
+               },
+               'fill-extrusion-height':{
+                   'property':'diffm',
+                   "stops":[
+                       [0.2,0],
+                       [1,50000]
+                    ]
+               },
+               'fill-extrusion-opacity': 0.8
+           }
+    });
+});
+</script>
+
+								<h2>For Male<br />
+								The height in the figure indicates the growth rate of men driving to work from 2011 to 2016.</h2>
+								<p>The brighter the color in the picture, the more men who drive to work.For 2016's dataset.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							
+<div id='map2' style='width: 90%; height: 400px'></div><div class="content">
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiNzEwODM4NjY1IiwiYSI6ImNqbGdmcmlvMDE3MTIzdnM1ang4eXpzcjIifQ.0niAC0PAnjpiw4M8cZyzhA';
+var map2 = new mapboxgl.Map({
+    container: 'map2', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+    pitch: 45,
+    bearing: -17.6,
+    zoom: 6 // starting zoom
+});
+map2.on('load',function(){
+    
+    map2.addLayer({
+        "id":"data2",
+        "type": "fill-extrusion",
+        "source":{
+            'type':'geojson',
+            'data':data2
+        },
+           'paint':{
+               'fill-extrusion-color':{
+                   'property':'2016f',
+                   "stops":[
+                       [0,'darkgray'],
+                       [50,'lightcoral'],
+                       [100,'crimson'],
+                       [200,'firebrick'],
+                       [300,'darkred'],
+                       ]
+               },
+               'fill-extrusion-height':{
+                   'property':'difff',
+                   "stops":[
+                       [0.2,0],
+                       [1,50000]
+                    ]
+               },
+               'fill-extrusion-opacity': 0.8
+           }
+    });
+});
+</script>
+
+								<h2>FOR FEMALE<br />
+								The height in the figure indicates the growth rate of women driving to work from 2011 to 2016.</h2>
+								<p>The darker the area in the picture, the more men who drive to work.For 2016's dataset</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							
+<div id='map3' style='width: 90%; height: 400px'></div><div class="content">
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiNzEwODM4NjY1IiwiYSI6ImNqbGdmcmlvMDE3MTIzdnM1ang4eXpzcjIifQ.0niAC0PAnjpiw4M8cZyzhA';
+var map3 = new mapboxgl.Map({
+    container: 'map3', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+    pitch: 45,
+    bearing: -17.6,
+    zoom: 6 // starting zoom
+});
+map3.on('load',function(){
+    
+    map3.addLayer({
+        "id":"data3",
+        "type": "fill-extrusion",
+        "source":{
+            'type':'geojson',
+            'data':data3
+        },
+           'paint':{
+               'fill-extrusion-color':{
+                   'property':'2016p',
+                   "stops":[
+                       [0,'darkgray'],
+                       [50,'lightcoral'],
+                       [100,'crimson'],
+                       [200,'firebrick'],
+                       [300,'darkred'],
+                       ]
+               },
+               'fill-extrusion-height':{
+                   'property':'diffp',
+                   "stops":[
+                       [0.2,0],
+                       [1,50000]
+                    ]
+               },
+               'fill-extrusion-opacity': 0.9
+           }
+    });
+});
+</script>
+
+								<h2>IN TOTAL<br />
+								The height in the figure shows the growth rate of people who choose to drive to work from 2011 to 2016.</h2>
+								<p>The darker the area in the picture, the more people drive to work.For 2016's dataset</p>
+							</div>
+						</section>
+					</section>
+
+				<!-- Three -->
+					
+							
+						</div>
+					</section>
+
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
