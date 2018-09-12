@@ -108,8 +108,11 @@ map1.on('load',function(){
                'fill-extrusion-height':{
                    'property':'diffm',
                    "stops":[
-                       [0.2,0],
-                       [1,50000]
+                       [0,0],
+		       [200,2000],
+                       [600,6000],
+		       [1000,10000],
+		       [1500,15000]
                     ]
                },
                'fill-extrusion-opacity': 0.8
