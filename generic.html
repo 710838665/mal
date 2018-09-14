@@ -9,6 +9,11 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+	    <script src='./data1.js'></script>
+	    <script src='./data2.js'></script>
+	    <script src='./data3.js'></script>
+         <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
 	</head>
 	<body>
 
@@ -84,12 +89,139 @@
 								<p>According to the above picture, the proportion of people who choose to drive to work in the north of the latte line is slightly larger than the south. Because driving is a very important mode of transportation, this is a hard need for many people. So on this issue, the difference between the north and the south of the latte line is very small.</p>
 								<h4>MPA ANALYSIS</h4>
 								
-								<div class="image"><img src="images/191.jpg" width="1050" height="700" alt="" /></div><div class="content">
-								<p>FOR PEOPLE</P>
-								<div class="image"><img src="images/192.jpg" width="1050" height="600" alt="" /></div><div class="content">
-								<P>FOR MALE</p>
-								<div class="image"><img src="images/193.jpg" width="1050" height="700" alt="" /></div><div class="content">
-								<p>FOR FEMALE</p>
+<div id='map1' style='width: 90%; height: 800px'></div><div class="content">
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiNzEwODM4NjY1IiwiYSI6ImNqbGdmcmlvMDE3MTIzdnM1ang4eXpzcjIifQ.0niAC0PAnjpiw4M8cZyzhA';
+var map1 = new mapboxgl.Map({
+    container: 'map1', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+    pitch: 45,
+    bearing: -17.6,
+    zoom: 6 // starting zoom
+});
+map1.on('load',function(){
+    
+    map1.addLayer({
+        "id":"data1",
+        "type": "fill-extrusion",
+        "source":{
+             'type':'geojson',
+             'data':data1
+        },
+           'paint':{
+               'fill-extrusion-color':{
+                   'property':'2016m',
+                   "stops":[
+                       [0,'darkgray'],
+                       [50,'lightcoral'],
+                       [100,'crimson'],
+                       [200,'firebrick'],
+                       [300,'darkred'],
+                       ]
+               },
+               'fill-extrusion-height':{
+                   'property':'diffm',
+                   "stops":[
+                       [0.2,0],
+                       [1,50000]
+                    ]
+               },
+               'fill-extrusion-opacity': 0.8
+           }
+    });
+});
+</script>
+								<p>FOR MALE</P>
+<div id='map2' style='width: 90%; height: 800px'></div><div class="content">
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiNzEwODM4NjY1IiwiYSI6ImNqbGdmcmlvMDE3MTIzdnM1ang4eXpzcjIifQ.0niAC0PAnjpiw4M8cZyzhA';
+var map2 = new mapboxgl.Map({
+    container: 'map2', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+    pitch: 45,
+    bearing: -17.6,
+    zoom: 6 // starting zoom
+});
+map2.on('load',function(){
+    
+    map2.addLayer({
+        "id":"data2",
+        "type": "fill-extrusion",
+        "source":{
+            'type':'geojson',
+            'data':data2
+        },
+           'paint':{
+               'fill-extrusion-color':{
+                   'property':'2016f',
+                   "stops":[
+                       [0,'darkgray'],
+                       [50,'lightcoral'],
+                       [100,'crimson'],
+                       [200,'firebrick'],
+                       [300,'darkred'],
+                       ]
+               },
+               'fill-extrusion-height':{
+                   'property':'difff',
+                   "stops":[
+                       [0.2,0],
+                       [1,50000]
+                    ]
+               },
+               'fill-extrusion-opacity': 0.8
+           }
+    });
+});
+</script>
+								<P>FOR FEMALE</p>
+<div id='map3' style='width: 90%; height: 800px'></div><div class="content">
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiNzEwODM4NjY1IiwiYSI6ImNqbGdmcmlvMDE3MTIzdnM1ang4eXpzcjIifQ.0niAC0PAnjpiw4M8cZyzhA';
+var map3 = new mapboxgl.Map({
+    container: 'map3', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+    pitch: 45,
+    bearing: -17.6,
+    zoom: 6 // starting zoom
+});
+map3.on('load',function(){
+    
+    map3.addLayer({
+        "id":"data3",
+        "type": "fill-extrusion",
+        "source":{
+            'type':'geojson',
+            'data':data3
+        },
+           'paint':{
+               'fill-extrusion-color':{
+                   'property':'2016p',
+                   "stops":[
+                       [0,'darkgray'],
+                       [50,'lightcoral'],
+                       [100,'crimson'],
+                       [200,'firebrick'],
+                       [300,'darkred'],
+                       ]
+               },
+               'fill-extrusion-height':{
+                   'property':'diffp',
+                   "stops":[
+                       [0.2,0],
+                       [1,50000]
+                    ]
+               },
+               'fill-extrusion-opacity': 0.9
+           }
+    });
+});
+</script>
+
+								<p>FOR </p>
 								<p>Through color, we can judge that the number of men driving to work in 2016 is more than that of women.By the way, the growth rate of women is higher than that of men.</p>
 								<p>From the map shows that from 2011-2016,the growth rate of people who from Coast Areas choose to drive to work as a driver is higher than the inland areas.This may be because the coastal population has a larger population base and is denser than the inland areas.</p>
 								<p>In 2011, the total number of men who chose to drive to work was 1,014,681. By 2016, the total number was 1,081,604, an increase of 66,923. The total male growth rate is 6.6%. In 2011, the total number of women who chose to drive to work was 792,667. By 2016, the total number was 871,310, an increase of 78,643. The total female growth rate was 9.9%. In 2011, the total number of people who chose to drive to work was 1,807,348. The total number of people in 2016 was 1,952,914, an increase of 145,566. The total growth rate is 8.1%.</p>
