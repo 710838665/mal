@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Data Driven Design</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+		<script src='./1.geojson'></script>
+		<script src='./2.geojson'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Data Driven Design</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">MAP</a></li>
+											<li><a href="generic.html">ANALYSIS&DOWLOWDS</a></li>
+											<li><a href="elements.html">Design</a></li>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Data Driven Design</h2>
+							<p>CODE1230 JIKANG<br>
+							z5211304</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<section>
+									<h2>Problem background</h2>
+									<p>Traffic problems between Sydney and Newcastle</p>
+									<h2>Sydney is the twenty-ninth in the ranking of traffic congestion in the world.</h2>
+									<h3>Newcastle is the ninth in the ranking of urban traffic congestion in Australia.</h3>
+									<h4>In the ranking of urban traffic congestion in New South Wales, Sydney is the first and Newcastle is second.</h4>
+									<h5>We can also see from the map that the number of people who choose to drive to work in these two cities and the growth rate are the most in New South Wales.</h5>
+									<div class="box alt">
+										<div class="row uniform 50%">
+											<div class="12u"><span class="image fit"><img src="images/001.jpg" alt="" /></span></div>
+									        <h5>We can also see from the map that the number of people who choose to drive to work in these two cities and the growth rate are the most in New South Wales.</h5>
+											<div class="12u"><span class="image fit"><img src="images/009.jpg" alt="" /></span></div>
+										</div>
+									</div>
+									</header>
+									<hr />
+									<header>
+										<h2>Problem definition</h2>
+										<p><strong>According to the analysis in Assignment 2, the number of people in coastal areas who choose to drive to work is higher and the growth rate is higher.</strong><br>
+										<strong>Sydney, as Australia's most densely populated area, traffic congestion has always been a problem that cannot be ignored.Newcastle is the second largest city in New South Wales, about 180 kilometers from the centre of Sydney.It takes about 2.5 hours.</strong><br> 
+										<b>If a bridge is built along the coastline, the distance will be shortened to 115 kilometers, and closed highways can increase the speed limit of the road. On this basis, the time required to reach Newcastle from Sydney will be reduced from two hours to one hour.</b></p>
+
+									<header>
+									<hr />
+									<header>
+								<h2>Three elements</h2>
+								<h4>Highways,Urban viaducts, shopping malls</h4>
+								<div class="box alt">
+									<div class="row uniform 50%">
+										<div class="4u"><span class="image fit"><img src="images/002.jpg" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="images/303.jpg" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="images/004.jpg" alt="" /></span></div>
+										<br><div class="12u"><span class="image fit"><img src="images/008.jpg" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="images/05.jpg" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="images/606.jpg" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="images/07.jpg" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="images/pic.jpg" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="images/pic.jpg" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="images/pic.jpg" alt="" /></span></div>
+									</div>
+								</div>
+								<header>
+									<p><strong>By combining these three elements, you can create a new way to solve the city congestion problem.</strong><br>
+									<b>For large international cities like Sydney, traffic jams are an urgent problem to solve. A section of highway or railway leading to other cities can divert people, and it also provides people with more convenient modes of travel while reducing traffic pressure. Shopping malls along the way can facilitate people's shopping needs when traveling, and can be accompanied by hotels and other functions, a large sea view hotel located above the mall can provide people with a good holiday or travel environment.</b></p>
+								<hr />
+
+								<h2>MAP</h2>
+								<section>
+<div id='map' style='width: 95%; height: 500px'></div><div class="content">
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiNzEwODM4NjY1IiwiYSI6ImNqbGdmcmlvMDE3MTIzdnM1ang4eXpzcjIifQ.0niAC0PAnjpiw4M8cZyzhA';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/710838665/cjnbu3y9h6a7k2sl4r93182xv', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+    pitch: 45,
+    bearing: -17.6,
+    zoom: 6 // starting zoom
+});
+map.on('load', function() {
+
+    map.addLayer({
+        "id": "data",
+        "type": "fill-extrusion",
+        "source": {
+            'type': 'geojson',
+            'data': './1.geojson'
+        },
+        'layout': {
+            'visibility': 'visible'
+            },
+        'paint': {
+                'fill-extrusion-color' : {
+                    'property': 'colour',
+                    'type': 'identity'
+                },
+                'fill-extrusion-height' : {
+                    'type': 'identity',
+                    'property': 'height'
+                },
+                'fill-extrusion-base' : {
+                    'type': 'identity',
+                    'property': 'base_height'
+                },
+                 'fill-extrusion-opacity': 0.9
+            }
+
+    });
+});
+</script>
+
+<header>
+	
+<hr/>
+									
+									<h2>Design details</h2>
+									<div class="box alt">
+										<div class="row uniform 50%">
+											<div class="4u"><span class="image fit"><img src="images/101.jpg" alt="" /></span></div>
+											<div class="4u"><span class="image fit"><img src="images/102.jpg" alt="" /></span></div>
+											<div class="4u"><span class="image fit"><img src="images/103.jpg" alt="" /></span></div>
+
+									<h2>Proposal &amp; Proposal</h2>
+									<p><span class="image left"><img src="images/106.jpg" alt="" /></span><b>The enclosed bridge will connect Sydney with Newcastle and Gosford, and it will also have two large malls with gas stations. The design of the double-deck lane reduces its traffic pressure, and its split-type secondary exit can also reduce the pressure of urban traffic as the role of urban viaducts.The lower lane can be laid with train tracks to improve the efficiency of transportation.</b></p>
+									<p><span class="image right"><img src="images/108.jpg" alt="" /></span>Vest</p>
+								</section>
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li><a href="https://www.tomtom.com/en_gb/trafficindex/list?citySize=ALL&continent=OC&country=ALL" title="REFFERENCE" target="_blank">REFFERENCE:</a></li>
+							<p>TomTom International BV.(2016)TomTom TRAFFIC INDEX:FULL RANKING Oceania.Available at: https://www.tomtom.com/en_gb/trafficindex/list?citySize=ALL&continent=OC&country=ALL [Accessed October 15, 2018]</p>>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
