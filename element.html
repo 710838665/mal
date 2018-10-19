@@ -10,7 +10,7 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
-		<script src='./1.geojson'></script>
+		<script src='./2.geojson'></script>
 		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
 	</head>
 	<body>
@@ -30,6 +30,7 @@
 											<li><a href="index.html">MAP</a></li>
 											<li><a href="generic.html">ANALYSIS&DOWLOWDS</a></li>
 											<li><a href="elements.html">Design</a></li>
+											<li><a href="element.html">(Design)</a></li>
 									</div>
 								</li>
 							</ul>
@@ -115,7 +116,7 @@ map.on('load', function() {
         "type": "fill-extrusion",
         "source": {
             'type': 'geojson',
-            'data': './1.geojson'
+            'data': './2.geojson'
         },
         'layout': {
             'visibility': 'visible'
