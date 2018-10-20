@@ -140,6 +140,49 @@ map.addLayer({
 <header>
 	
 <hr/>
+<div id='map2' style='width: 90%; height: 500px'></div><div class="content">
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiNzEwODM4NjY1IiwiYSI6ImNqbGdmcmlvMDE3MTIzdnM1ang4eXpzcjIifQ.0niAC0PAnjpiw4M8cZyzhA';
+var map2 = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+    pitch: 45,
+    bearing: -17.6,
+    zoom: 6 // starting zoom
+});
+map2.on('load', function() {
+    map2.addLayer({
+        "id": "data",
+        "type": "fill-extrusion",
+        "source": {
+            'type': 'geojson',
+            'data': './2.geojson'
+        },
+        'layout': {
+            'visibility': 'visible'
+            },
+        'paint': {
+                'fill-extrusion-color' : {
+                    'property': 'colour',
+                    'type': 'identity'
+                },
+                'fill-extrusion-height' : {
+                    'type': 'identity',
+                    'property': 'height'
+                },
+                'fill-extrusion-base' : {
+                    'type': 'identity',
+                    'property': 'base_height'
+                },
+                 'fill-extrusion-opacity': 0.9
+            }
+    });
+});
+</script>
+<header>
+	
+<hr/>
 									
 									<h2>Design details</h2>
 									<div class="box alt">
