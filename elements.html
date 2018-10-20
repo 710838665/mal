@@ -144,7 +144,7 @@ map.addLayer({
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiNzEwODM4NjY1IiwiYSI6ImNqbGdmcmlvMDE3MTIzdnM1ang4eXpzcjIifQ.0niAC0PAnjpiw4M8cZyzhA';
 var map2 = new mapboxgl.Map({
-    container: 'map', // container id
+    container: 'map2', // container id
     style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
     center: [151.004105, -33.813002], // starting position [lng, lat]
     pitch: 45,
@@ -153,7 +153,7 @@ var map2 = new mapboxgl.Map({
 });
 map2.on('load', function() {
     map2.addLayer({
-        "id": "data",
+        "id": "data2",
         "type": "fill-extrusion",
         "source": {
             'type': 'geojson',
