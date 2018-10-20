@@ -109,33 +109,33 @@ var map = new mapboxgl.Map({
 });
 map.on('load', function() {
 
-    map.addLayer({
-        "id": "data",
-        "type": "fill-extrusion",
-        "source": {
-            'type': 'geojson',
-            'data': './1.geojson'
+map.addLayer({
+    "id": "data",
+    "type": "fill-extrusion",
+    "source": {
+        'type': 'geojson',
+        'data': './1.geojson'
+    },
+    'layout': {
+        'visibility': 'visible'
         },
-        'layout': {
-            'visibility': 'visible'
+    'paint': {
+            'fill-extrusion-color' : {
+                'property': 'colour',
+                'type': 'identity'
             },
-        'paint': {
-                'fill-extrusion-color' : {
-                    'property': '#7031AF',
-                    'type': 'identity'
-                },
-                'fill-extrusion-height' : {
-                    'type': 'identity',
-                    'property': 'height'
-                },
-                'fill-extrusion-base' : {
-                    'type': 'identity',
-                    'property': 'base_height'
-                },
-                 'fill-extrusion-opacity': 0.9
-            }
+            'fill-extrusion-height' : {
+                'type': 'identity',
+                'property': 'height'
+            },
+            'fill-extrusion-base' : {
+                'type': 'identity',
+                'property': 'base_height'
+            },
+             'fill-extrusion-opacity': 1
+        }
 
-    });
+});
 });
 </script>
 
