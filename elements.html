@@ -10,6 +10,7 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+		<script src='./data3.js'></script>
 		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
 	</head>
 	<body>
@@ -57,7 +58,49 @@
 										<div class="row uniform 50%">
 											<div class="12u"><span class="image fit"><img src="images/001.jpg" alt="" /></span></div>
 									        <h5>We can also see from the map that the number of people who choose to drive to work in these two cities and the growth rate are the most in New South Wales.</h5>
-											<div class="12u"><span class="image fit"><img src="images/009.jpg" alt="" /></span></div>
+<div id='map3' style='width: 100%; height: 600px'></div><div class="content">
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiNzEwODM4NjY1IiwiYSI6ImNqbGdmcmlvMDE3MTIzdnM1ang4eXpzcjIifQ.0niAC0PAnjpiw4M8cZyzhA';
+var map3 = new mapboxgl.Map({
+    container: 'map3', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+    pitch: 45,
+    bearing: -17.6,
+    zoom: 6 // starting zoom
+});
+map3.on('load',function(){
+    
+    map3.addLayer({
+        "id":"data3",
+        "type": "fill-extrusion",
+        "source":{
+            'type':'geojson',
+            'data':data3
+        },
+           'paint':{
+               'fill-extrusion-color':{
+                   'property':'2016p',
+                   "stops":[
+                       [0,'darkgray'],
+                       [50,'lightcoral'],
+                       [100,'crimson'],
+                       [200,'firebrick'],
+                       [300,'darkred'],
+                       ]
+               },
+               'fill-extrusion-height':{
+                   'property':'diffp',
+                   "stops":[
+                       [0.2,0],
+                       [1,50000]
+                    ]
+               },
+               'fill-extrusion-opacity': 0.9
+           }
+    });
+});
+</script>
 										</div>
 									</div>
 									</header>
